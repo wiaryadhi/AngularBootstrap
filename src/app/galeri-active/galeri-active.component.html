@@ -1,0 +1,10 @@
+<div class="headTitle">
+  <h2>Galeri Generator</h2>
+
+  <div class="image-service">
+    <img [src]="image" [alt]="image" *ngFor="let image of images">
+  </div>
+
+  <button (click)="addImage()" class="btnLearn"> add</button>
+
+</div>

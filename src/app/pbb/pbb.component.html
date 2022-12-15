@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="card">
+    <div class="headTitle">
+      <h1>PBB Kalkulator</h1>
+      <h3>Perhitungan pajak bumi dan bangunan</h3>
+      {{ luasTanah }} {{ luasBangunan }} {{ hrgPBB }}
+    </div>
+
+    <div class="perhitungan">
+      <label for="luasTanah" id="luasTanah">Luas Tanah</label><br>
+      <input type="number" [(ngModel)]="luasTanah" id="ltID" placeholder="Luas tanah dalam m2"> <br>
+
+      <label for="luasBangunan" id="luasBangunan">Luas Bangunan</label><br>
+      <input type="number" [(ngModel)]="luasBangunan" id="lbID" placeholder="Luas bangunan dalam m2"><br>
+
+      <label for="NJOPTanah" id="NJOPTanah">NJOP Tanah</label><br>
+      <input type="number" [(ngModel)]="NJOPT" id="NJOPTID" placeholder="NJOP Tanah dalam rupiah"><br>
+
+      <label for="NJOPBangunan" id="NJOPBangunan">NJOP Bangunan</label><br>
+      <input type="number" [(ngModel)]="NJOPB" id="NJOPBID" placeholder="NJOP Bangunan dalam rupiah"><br>
+    </div>
+
+    <button (click)="hitungPBB()" class="btnHitung btn btn-primary" type="submit" id="btnHitung">Hitung</button>
+    <p>hasil : {{ hrgPBB }}</p>
+
+
+    <div class="alert" id="alertHitung" role="alert">
+    </div>
+
+  </div>
+</div>

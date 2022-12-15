@@ -1,0 +1,49 @@
+.contentC {
+  margin-top: -90px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.content {
+  margin-left: 120px;
+  margin-right: 120px;
+}
+
+.buttonC {
+  display: flex;
+
+}
+.btnContact {
+  background-color: #f13c77;
+  padding: 20px;
+  border-radius: 5px;
+  width: 150px;
+  text-align: center;
+  margin-right: 30px;
+}
+.btnContact:hover {
+  background-color: #ecccc3;
+  color: #f13c77;
+  transition: 0.7s;
+}
+
+.btnProject {
+  background-color: rgb(200, 200, 200);
+  color: black;
+  padding: 20px;
+  border-radius: 5px;
+  width: 150px;
+  text-align: center;
+}
+
+
+.btnProject:hover {
+  background-color: #f13c77;
+  color: #ecccc3;
+  transition: 0.7s;
+}

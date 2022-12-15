@@ -1,0 +1,40 @@
+
+.headerC {
+
+  color: white;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  height: 90px;
+
+}
+
+.menu {
+  width:100%;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  margin-left: 120px;
+  margin-right: 120px;
+
+}
+
+.menuRight {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home {
+  border: solid;
+  padding-bottom: 10px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-color: #f13c77;
+  color: #f13c77;
+}
+
+.logo {
+  filter: invert(35%) sepia(56%) saturate(4003%) hue-rotate(320deg) brightness(99%) contrast(90%);}
+
