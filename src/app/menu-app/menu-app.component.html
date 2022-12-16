@@ -1,0 +1,90 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-3">
+      <div class="card">
+        <div class="card-title">
+          <h3>Menu APP</h3>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Makanan / Minuman</label>
+          <input [(ngModel)]="menu.name" type="text" class="form-control">
+          <label class="form-label">Harga</label>
+          <input [(ngModel)]="menu.price" type="number" class="form-control">
+          <label class="form-label">Jumlah</label>
+          <input [(ngModel)]="menu.quantity" type="number" class="form-control">
+        </div>
+        <button (click)="addMenu()" class="btn btn-primary">Tambah Pesanan</button>
+      </div>
+    </div>
+    <div class="col-9">
+        <h3>Daftar Pesanan</h3>
+      <table class="table">
+        <thead>
+        <tr>
+          <th class="col-3">Pesanan</th>
+          <th class="col-2">Harga</th>
+          <th class="col-1">Jumlah</th>
+          <th class="col-3">Total</th>
+          <th class="col-3">Aksi</th>
+        </tr>
+        </thead>
+        <tbody>
+        <ng-template ngFor let-item [ngForOf]="menus" let-i="index">
+          <tr>
+            <td> {{item.name}} </td>
+            <td> {{item.price | currency: "IDR"}} </td>
+            <td> {{ item.quantity }} </td>
+            <td> {{item.quantity * item.price | currency: "IDR"}}</td>
+            <td>
+              <button (click)="rmvMenu(i)" class="btn btn-danger">
+                Hapus
+              </button>
+            </td>
+          </tr>
+        </ng-template>
+
+        </tbody>
+      </table>
+      <div class="col-9">
+      <table class="table">
+        <thead>
+        <tr *ngIf="menus">
+          <th>PPN</th>
+          <th>{{ 11/100 | percent}}</th>
+        </tr>
+        <tr *ngIf="menus">
+          <th >Total</th>
+          <th >{{ harga | currency:"IDR"}}</th>
+        </tr>
+        <tr *ngIf="menus">
+          <th>Grand Total</th>
+          <th>{{ (harga * (11/100)) + harga | currency: "IDR" }}</th>
+        </tr>
+
+        <tr>
+          <th>Bayar</th>
+          <th>
+            <input [(ngModel)]="bayar" type="number" class="form-control">
+          </th>
+        </tr>
+        <tr>
+          <th>Kembali</th>
+          <th *ngIf="((harga * (11/100)) + harga) < bayar; else kurang">
+          {{  ((harga * (11/100)) + harga) - bayar}}
+
+          </th>
+        </tr>
+        </thead>
+
+      </table>
+        <ng-template #kurang>
+          <div class="alert alert-danger">
+            Uang kurang
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
+
+

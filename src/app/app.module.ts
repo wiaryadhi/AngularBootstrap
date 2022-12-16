@@ -9,6 +9,8 @@ import { GaleriActiveComponent } from './galeri-active/galeri-active.component';
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { PbbComponent } from './pbb/pbb.component';
 import {FormsModule} from "@angular/forms";
+import { TodoComponent } from './todo/todo.component';
+import { MenuAppComponent } from './menu-app/menu-app.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import {FormsModule} from "@angular/forms";
     GaleriComponent,
     GaleriActiveComponent,
     JumbotronComponent,
-    PbbComponent
+    PbbComponent,
+    TodoComponent,
+    MenuAppComponent
   ],
   imports: [
     BrowserModule,
