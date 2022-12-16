@@ -69,19 +69,21 @@
         </tr>
         <tr>
           <th>Kembali</th>
-          <th *ngIf="((harga * (11/100)) + harga) < bayar; else kurang">
-          {{  ((harga * (11/100)) + harga) - bayar}}
-
+          <th *ngIf="((harga * (11/100)) + harga) <= bayar">
+          {{  ((((harga * (11/100)) + harga) - bayar) - (((harga * (11/100)) + harga) - bayar)) - (((harga * (11/100)) + harga) - bayar) | currency:"IDR"}}
+          </th>
+          <th *ngIf="bayar == 0 || bayar == undefined">
+            0
+          </th>
+          <th *ngIf="bayar > 0 && bayar - ((harga * (11/100)) + harga) < 0">
+            <div class="alert alert-danger">
+              Uang kurang
+            </div>
           </th>
         </tr>
         </thead>
 
       </table>
-        <ng-template #kurang>
-          <div class="alert alert-danger">
-            Uang kurang
-          </div>
-        </ng-template>
       </div>
     </div>
   </div>

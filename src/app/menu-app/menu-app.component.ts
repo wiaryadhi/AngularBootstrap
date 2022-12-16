@@ -12,7 +12,7 @@ export class MenuAppComponent {
   pajakPPN: number = 1.1;
   harga: number = 0;
 
-  bayar: number = 0;
+  bayar: number= 0;
 
 
 
